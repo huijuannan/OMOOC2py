@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from Tkinter import *
+import ScrolledText
 # import ttk
 import datetime
 
@@ -17,11 +18,18 @@ def save_diary():
 root = Tk()
 root.title("Dear Diary")
 
-frame_top = Frame(width=350, height=200, bg='white')
+frame_top_left = Frame(width=350, height=200, bg='white')
+frame_top_right = Frame(width=10, height=200)
 frame_middle = Frame(width=350, height=180, bg='white')
 frame_bottom = Frame(width=350, height=40)
 
-HistoryBox = Text(frame_top)
+HistoryBox = Text(frame_top_left)
+S = Scrollbar(frame_top_right)
+# S.pack(side=RIGHT, fill=Y)
+# HistoryBox.pack(side=LEFT, fill=Y)
+S.config(command=HistoryBox.yview)
+HistoryBox.config(yscrollcommand=S.set)
+
 
 file = open("DiaryPool.txt")
 show_text = file.read()
@@ -36,15 +44,20 @@ SAVE["text"] = "Save"
 SAVE["fg"] = "red"
 SAVE["command"] = save_diary
 
-frame_top.grid(row=0, column=0, padx=4, pady=5)
+# HistoryBox.tag_config('green', foreground='#008B00')
+
+frame_top_left.grid(row=0, column=0, padx=4, pady=5)
+frame_top_right.grid(row=0, column=1, padx=4, pady=5)
 frame_middle.grid(row=1, column=0, padx=4, pady=5)
 frame_bottom.grid(row=2, column=0)
-frame_top.grid_propagate(0)
+frame_top_left.grid_propagate(0)
+frame_top_right.grid_propagate(0)
 frame_middle.grid_propagate(0)
 frame_bottom.grid_propagate(0)
 
 HistoryBox.grid()
 InputBox.grid()
 SAVE.grid()
+S.grid()
 
 root.mainloop()
