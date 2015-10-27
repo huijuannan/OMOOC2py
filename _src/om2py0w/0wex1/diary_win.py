@@ -17,30 +17,34 @@ def save_diary():
 root = Tk()
 root.title("Dear Diary")
 
+frame_top = Frame(width=350, height=200, bg='white')
+frame_middle = Frame(width=350, height=180, bg='white')
+frame_bottom = Frame(width=350, height=40)
 
-HistoryBox = Text(root, width=40, height=10)
+HistoryBox = Text(frame_top)
 
 file = open("DiaryPool.txt")
 show_text = file.read()
 file.close()
 
 HistoryBox.insert(END, show_text)
-HistoryBox.pack({"side": "top"})
 
+InputBox = Text(frame_middle)
 
-InputBox = Text(root, width=40, height=10)
-InputBox.pack({"side": "top"})
-
-SAVE = Button(root)
+SAVE = Button(frame_bottom)
 SAVE["text"] = "Save"
 SAVE["fg"] = "red"
 SAVE["command"] = save_diary
-SAVE.pack({"side": "bottom"})
 
+frame_top.grid(row=0, column=0, padx=4, pady=5)
+frame_middle.grid(row=1, column=0, padx=4, pady=5)
+frame_bottom.grid(row=2, column=0)
+frame_top.grid_propagate(0)
+frame_middle.grid_propagate(0)
+frame_bottom.grid_propagate(0)
 
-	# file = open("DiaryPool.txt","a")
-	# 	file.write (datetime.datetime.now().__format__('%c')+"\n")
-	# 	file.write(self.word.get("1.0",'end')+"\n\n")
-	# 	self.show_text.set(self.get_history())
-	# 	file.close()
+HistoryBox.grid()
+InputBox.grid()
+SAVE.grid()
+
 root.mainloop()
