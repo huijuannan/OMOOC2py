@@ -4,8 +4,8 @@ class Application(Frame):
 	def say_hi(self):
 		print "hi, there, everyone!"
 
-	def print_to_cli(self, words):
-		print words
+	def print_to_cli(self):
+		print self.word.get("1.0",'end')
 
 	def createWidgets(self):
 		self.QUIT = Button(self)
@@ -18,18 +18,16 @@ class Application(Frame):
 		self.hi_there = Button(self)
 		self.hi_there["text"] = "Hello"
 		self.hi_there["command"] = self.say_hi
-
 		self.hi_there.pack({"side": "left"})
 
-		self.word = Text(self, width=40, height=10)
+		# self.Words = StringVar()                            
+		self.word = Text(self, width=40, height=30)
 		self.word.pack({"side": "bottom"})
-		Words = self.word.get('1.0', 'end')
-		print Words
 
 		self.SAVE = Button(self)
 		self.SAVE["text"] = "Save"
 		self.SAVE["fg"] = "red"
-		self.SAVE["command"] = self.print_to_cli(Words)
+		self.SAVE["command"] = self.print_to_cli
 		self.SAVE.pack({"side": "bottom"})
 
 	def __init__(self, master=None):
