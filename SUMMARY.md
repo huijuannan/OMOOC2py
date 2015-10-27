@@ -1,8 +1,4 @@
 # Summary
-- [为什么要写个人日志](why_i_should_write_journals.md)
-  - [Week1](week1/README.md)
-    - [1wd5](week1/1w5d.md)
-    - [1wd6](week1/1w6d.md)
 - [教学反转](0MOOC/README.md)
   - [交互式日记系统](_src/om2py0w/0wex1/README.md)
     - [需求](_src/om2py0w/0wex1/ToDo.md)
@@ -14,3 +10,7 @@
 - [素材 (draft)](draft/README.md)
   + [教程该怎么写](draft/how2tutorial.md)
 - [有关](ABOUT.md)
+- [为什么要写个人日志](why_i_should_write_journals.md)
+  - [1wd5](week1/1w5d.md)
+  - [1wd6](week1/1w6d.md)
+
