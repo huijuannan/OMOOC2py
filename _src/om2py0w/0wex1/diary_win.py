@@ -9,8 +9,7 @@ class Application(Frame):
 	def print_to_cli(self):
 		file = open("DiaryPool.txt","a")
 		file.write (datetime.datetime.now().__format__('%c')+"\n")
-		dtext = self.word.get("1.0",'end')
-		file.write(text+"\n\n")
+		file.write(self.word.get("1.0",'end')+"\n\n")
 		file.close()
 		
 
