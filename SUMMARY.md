@@ -3,6 +3,7 @@
   - [交互式日记系统](_src/om2py0w/0wex1/README.md)
     - [需求](_src/om2py0w/0wex1/ToDo.md)
     - [实现](_src/om2py0w/0wex1/HowToDo.md)
+    - [网络版](_src/om2py3w/howto.md)
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)

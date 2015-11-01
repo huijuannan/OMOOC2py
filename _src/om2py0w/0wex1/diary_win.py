@@ -18,12 +18,17 @@ def save_diary():
 root = Tk()
 root.title("Dear Diary")
 
-frame_top_left = Frame(width=350, height=200, bg='white')
-frame_top_right = Frame(width=10, height=200)
-frame_middle = Frame(width=350, height=180, bg='white')
-frame_bottom = Frame(width=350, height=40)
+# frame_top_left = Frame(width=350, height=200, bg='white')
+# frame_top_right = Frame(width=10, height=200)
+# frame_middle = Frame(width=350, height=180, bg='white')
+# frame_bottom = Frame(width=350, height=40)
 
-HistoryBox = Text(frame_top_left)
+frame_top_left = Frame(bg='white')
+frame_top_right = Frame()
+frame_middle = Frame(bg='white')
+frame_bottom = Frame()
+
+HistoryBox = Text(frame_top_left, width = 9, height = 10)
 S = Scrollbar(frame_top_right)
 # S.pack(side=RIGHT, fill=Y)
 # HistoryBox.pack(side=LEFT, fill=Y)
@@ -37,7 +42,7 @@ file.close()
 
 HistoryBox.insert(END, show_text)
 
-InputBox = Text(frame_middle)
+InputBox = Text(frame_middle, width = 10, height = 10)
 
 SAVE = Button(frame_bottom)
 SAVE["text"] = "Save"
@@ -46,18 +51,23 @@ SAVE["command"] = save_diary
 
 # HistoryBox.tag_config('green', foreground='#008B00')
 
+
 frame_top_left.grid(row=0, column=0, padx=4, pady=5)
 frame_top_right.grid(row=0, column=1, padx=4, pady=5)
 frame_middle.grid(row=1, column=0, padx=4, pady=5)
 frame_bottom.grid(row=2, column=0)
-frame_top_left.grid_propagate(0)
-frame_top_right.grid_propagate(0)
-frame_middle.grid_propagate(0)
-frame_bottom.grid_propagate(0)
+# frame_top_left.grid_propagate(0)
+# frame_top_right.grid_propagate(0)
+# frame_middle.grid_propagate(0)
+# frame_bottom.grid_propagate(0)
+
+
 
 HistoryBox.grid()
 InputBox.grid()
 SAVE.grid()
 S.grid()
+
+
 
 root.mainloop()
