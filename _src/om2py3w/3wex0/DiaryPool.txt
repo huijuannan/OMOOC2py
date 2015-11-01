@@ -1,12 +1,14 @@
-Tue Oct 27 21:55:44 2015
-abc
-adf
-dfd
+Dear Diary
 
+today is a little warmer than yesterday
 
-Tue Oct 27 21:55:52 2015
-dfd
-ere
-fdfd
+i'm not very happy
 
+i even don't know why
+
+i'm doing my homework
+
+it's not that much hard
+
+but i still want some more features
 
