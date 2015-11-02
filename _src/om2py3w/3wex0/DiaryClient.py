@@ -10,15 +10,23 @@ def Main():
 	 s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 	 s.bind((host, port))
 
+
 	 s.sendto("hi", server)
 	 data, addr = s.recvfrom(1024)
 	 print data
 
 	 message = raw_input('->  ')
+	 # s.setblocking(0)
+	 s.settimeout(0.01)
+
 	 while message != 'quit':
-	 	s.sendto(message, server)
-	 	# data, addr = s.recvfrom(1024)
-	 	# print data
+	 	if message != '':
+	 		s.sendto(message, server)
+	 		try:
+	 			data, addr = s.recvfrom(1024)
+	 			print data
+	 		except:
+	 			pass
 	 	message = raw_input('->  ')
 
 	 s.close()

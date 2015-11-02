@@ -11,23 +11,28 @@ s.bind((host, port))
 
 print "Server Startted"
 
-clients = []
-
 while True:
 	data, addr = s.recvfrom(1024)
 
-	if str(data) == "hi":
-	                clients.append(addr) # need if argument
-	                file = open("DiaryPool.txt")
-	                history = file.read()
-	                file.close()
-	                for client in clients:
-	                	s.sendto(history, client)
+	if str(data) == "hi" or str(data) == "r":
+		file = open("DiaryPool.txt")
+		history = file.read()
+		file.close()
+		# print len(history)
+		s.sendto('*'*15 +"I'm diary history" +'*'*15+'\n' +history, addr)
+	elif str(data) == "?":
+		strHelp= """
+		 ? :          help 
+		r or hi: show all diary
+		quit :    quit
+		"""
+		s.sendto(strHelp, addr)
 	else:
 		file = open("DiaryPool.txt","a")
 		file.write(str(data)+"\n\n")
 		file.close()
+		# history = 'Recored.'
 		# for client in clients:
 		# 	s.sendto(data, client)
-
+	# s.sendto(history, addr)
 s.close()

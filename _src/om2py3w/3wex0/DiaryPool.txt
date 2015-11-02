@@ -12,3 +12,67 @@ it's not that much hard
 
 but i still want some more features
 
+Today, it's sunny outside
+
+i feel much better
+
+hello
+
+hi,i'll try another time
+
+I'll try r
+
+no, it's still not working
+
+
+
+
+
+it's working now,but a little strange here
+
+
+
+i'm trying again
+
+
+
+
+
+hello
+
+i fixed something
+
+en
+
+try again
+
+en
+
+hello
+
+i'm trying again
+
+hello
+
+i'm trying
+
+something is wrong with s.setblocking
+
+this time try again
+
+this time seems work
+
+yes, right
+
+try agian
+
+yes
+
+it's working
+
+这次试一下中文
+
+看起来还不错
+
+yes
+
