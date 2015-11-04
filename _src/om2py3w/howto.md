@@ -174,8 +174,8 @@ if __name__ == "__main__":
 
  - So, 上代码，Client改作如下：
 
- ```python
- import socket
+```python
+import socket
 import threading
 import time
 
@@ -220,8 +220,7 @@ while message != 'quit':
 shutdown = True
 rT.join() 
 s.close()
-
- ```
+```
 
 - Threading的部分和[视频](https://www.youtube.com/watch?v=PkfwX6RjRaI)一致
 - 但用Threading有一个问题，就是万一代码遇到了问题，而`recvfrom()`会无限运行，这时候就只有用`pkill`来结束程序了。
