@@ -84,3 +84,17 @@ hello
 
 q
 
+i just fixed my program to a new version
+
+it's use threading which is a new tool I just learned
+
+it's seems really cool
+
+yes, it's really works
+
+I'm very happy now
+
+threading is a tool used to multitask
+
+really cool hah?
+
