@@ -164,6 +164,68 @@ if __name__ == "__main__":
   - 大妈演示的时候，感觉server端并没有运行程序，而是直接看历史日记的文档是否有变化，本来以为是一个坑，想着是用python做的后台运行之类的。
   后来想明白了，就是开两个终端，一个运行server.py，另一个终端tail -f就可以。
 
+  ---
+  ### 运用Threading的解决方案
+ - 之前对网络版日记本的想法是，每当Client发送一个信息(`sendto()`)给Server之后，再从Server那里尝试接收一条消息（`recvfrom()`）。
+ - 但如果Server想给客户端发公告呢？那就只有等到Client给Server发送消息的时候，才可以收到，这样Server的主动权貌似就太小了。
+ - 于是结合YouTube上看到的[视频](https://www.youtube.com/watch?v=PkfwX6RjRaI)，尝试了运用threading来接收消息
+ > Threading可以让python在后台运行一些程序。所以，这一版本的思路是，我们让`recvfrom()`在后台一直运行，
+ 只要接收到了消息就`print`出来，这样以来就解决了上面的矛盾
+
+ - So, 上代码，Client改作如下：
+
+ ```python
+ import socket
+import threading
+import time
+
+shutdown = False
+tLock = threading.Lock()
+
+def receving(name, sock):
+	while not shutdown:
+		try:
+			tLock.acquire()
+			while True:
+				data, addr = sock.recvfrom(1024)
+				print data
+		except:
+		                pass
+		finally:
+			tLock.release()
+
+host = '127.0.0.1'
+port = 5001
+server = ("127.0.0.1", 5000)
+
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.bind((host, port))
+s.setblocking(0)
+
+rT = threading.Thread(target=receving, args = ("RecvThread", s))
+rT.start()
+
+s.sendto("hi", server)
+time.sleep(0.1)
+message = raw_input('->  ')
+
+while message != 'quit':
+ 	if message != '':
+ 		s.sendto(message, server)
+ 	tLock.acquire()
+ 	message = raw_input('->  ')
+ 	tLock.release()
+ 	time.sleep(0.1)
+
+shutdown = True
+rT.join() 
+s.close()
+
+ ```
+
+- Threading的部分和[视频](https://www.youtube.com/watch?v=PkfwX6RjRaI)一致
+- 但用Threading有一个问题，就是万一代码遇到了问题，而`recvfrom()`会无限运行，这时候就只有用`pkill`来结束程序了。
+
   ---------
   #### 待解决的问题
 1. 1周的作业docotp应用拖到现在
