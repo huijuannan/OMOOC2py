@@ -1,4 +1,10 @@
 # 网络版日记本
+
+- Python 2.7.9 | 64-bit 
+- Linux 3.19.0-25-generic 
+- Ubuntu 14.04.1
+
+
 首先，看大妈的演示，抓到这么几个点
 1. 在client端运行脚本main.py
 2. 首行出现`md2client 15.10.28.2126`，应该是client和server建立连接时候返回的
