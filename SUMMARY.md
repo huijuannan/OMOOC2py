@@ -4,6 +4,7 @@
     - [需求](_src/om2py0w/0wex1/ToDo.md)
     - [实现](_src/om2py0w/0wex1/HowToDo.md)
     - [网络版](_src/om2py3w/howto.md)
+    - [web版](_src/om2py4w/web.md)
 - [基础旋进](1sTry/README.md)
 - [迭代作品](2nDev/README.md)
 - [人生首秀](3rDemo/README.md)
