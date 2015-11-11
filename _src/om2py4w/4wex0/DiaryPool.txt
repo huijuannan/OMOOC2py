@@ -107,3 +107,18 @@ hello
 I's working now
 But a little slow
 not now
+hello, it's a new day
+en, i'm trying to turn off bootstrap
+en, i'm trying to turn off bootstrap
+输入条改成了大的，但是太靠边了貌似
+输入条改成了大的，但是太靠边了貌似
+输入条改成了大的，但是太靠边了貌似
+输入条改成了大的，但是太靠边了貌似
+这次居中了
+看起来好了写
+这次如何
+文本框怎么居中呢
+这次呢
+如果某一天
+照亮整个
+让一切归零
