@@ -10,27 +10,35 @@
 	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+<header class="jumbotron" id="overview">
+	<div class="container text-center">
+	<h1 >Dear Diary</h1>
+	
+		<p class= "lead">Happiness is not determined by what's happening around you</p>
+		<p class= "lead">but rather what's happening inside you</p>
+	
+	
+	</div>
+</header>
 
 <div class="container">
-<form class="form-horizontal" role="form" action="/diary" method="post">
-
-<div class="form-group">
-	<div class="col-sm-10">
-		<input name="mydiary" type="text" class="form-control" placeholder="今天过得如何？">
-	</div>
-	</div>
+<div class="row">
+<form role="form" action="/diary" method="post">
+<div class="input-group input-group-lg">
 	
-<div class="form-group">
-<div class="col-sm-offset-0 col-sm-10">
-<button type="submit" class="btn btn-default">提交</button>
-</div>
+	<input  class="form-control" name="mydiary" type="text" placeholder="今天过得如何？">
+	<span class="input-group-btn">
+	<button type="submit" class="btn btn-default">提交</button>	
+	</span>
+
 </div>
 </form>
 </div>
-
+</div>
 
 
 <div class="container">
+<br/>
 	%for i in history:
 	<p class="text-center">{{i}}</p>
 	%end

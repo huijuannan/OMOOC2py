@@ -6,13 +6,8 @@ Usage:
 from bottle import run, route, debug, template, request
 @route('/diary')
 def  submit_diary():
-	return '''
-	<form action="/diary" method="post">
-	<input name="mydiary" type="text">
-	<br />
-	<input type="submit" value="submit">
-	</form>
-	'''
+	return template("welcome.tpl")
+	
 
 
 

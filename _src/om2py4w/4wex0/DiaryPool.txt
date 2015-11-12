@@ -1,124 +1,15 @@
-Dear Diary
+Some say love, it is a river, that drowns the tender reed
+Some say love, it is a razor, that leaves your soul to bleed
+Some say love, it is a hunger, an endless aching need
+I say love, it is a flower, and you, it's only seed
 
-today is a little warmer than yesterday
+It's the heart afraid of breaking, that never learns to dance
+It's the dream afraid of waking, that never takes the chance
+It's the one who won't be taken, who can not seem to give
+And the soul afraid of dying, that never learns to live
 
-i'm not very happy
-
-i even don't know why
-
-i'm doing my homework
-
-it's not that much hard
-
-but i still want some more features
-
-Today, it's sunny outside
-
-i feel much better
-
-hello
-
-hi,i'll try another time
-
-I'll try r
-
-no, it's still not working
-
-
-
-
-
-it's working now,but a little strange here
-
-
-
-i'm trying again
-
-
-
-
-
-hello
-
-i fixed something
-
-en
-
-try again
-
-en
-
-hello
-
-i'm trying again
-
-hello
-
-i'm trying
-
-something is wrong with s.setblocking
-
-this time try again
-
-this time seems work
-
-yes, right
-
-try agian
-
-yes
-
-it's working
-
-这次试一下中文
-
-看起来还不错
-
-yes
-
-hello
-
-今天还不错
-
-但是没有做太多事情
-
-q
-
-i just fixed my program to a new version
-
-it's use threading which is a new tool I just learned
-
-it's seems really cool
-
-yes, it's really works
-
-I'm very happy now
-
-threading is a tool used to multitask
-
-really cool hah?
-
-我的妈呀
-我的妈呀
-I'm happy now
-how about you
-hello
-hello
-I's working now
-But a little slow
-not now
-hello, it's a new day
-en, i'm trying to turn off bootstrap
-en, i'm trying to turn off bootstrap
-输入条改成了大的，但是太靠边了貌似
-输入条改成了大的，但是太靠边了貌似
-输入条改成了大的，但是太靠边了貌似
-输入条改成了大的，但是太靠边了貌似
-这次居中了
-看起来好了写
-这次如何
-文本框怎么居中呢
-这次呢
-如果某一天
-照亮整个
-让一切归零
+When the night has been too lonely and the road has been too long
+And you think that love is only for the lucky and the strong
+Just remember in the winter, far beneath the bitter snow
+Lies the seed, that with the sun's love in the spring becomes the rose.
+I'm almost done
