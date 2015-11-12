@@ -1,8 +1,13 @@
-# OMOOC.py 周任务代码试作
+# Dear Diary (Web Version)
 
-## 4w
+## 需求
+- 每次运行时合理打印出过往的所有笔记
+- 一次接收输入一行笔记
+- 在服务端保存为文件
 
-- 私人笔记:
-    + SAE 发布服务
-    + web 页面端口
-    + 用户认证
+## 使用
+CLI运行
+```bash
+$ python DiaryBottleTlp.py
+```
+浏览器打开`http://localhost:8080/diary`
