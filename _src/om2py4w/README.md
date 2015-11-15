@@ -8,6 +8,8 @@
 ## 使用
 CLI运行
 ```bash
-$ python DiaryBottleTlp.py
+$ python diary.py
 ```
 浏览器打开`http://localhost:8080/diary`
+
+实现过程
