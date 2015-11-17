@@ -7,28 +7,27 @@ app = Bottle()
 
 @app.route('/')
 def  submit_diary():
-	return template("welcome.tpl")
+	# return template("welcome.tpl")
+	bucket = Bucket("diarypool")
+	history = bucket.get_object_contents("DiaryPool.txt")
+	return str(type(history))
 
 
 
-
-@app.route('/', method='POST')
-def save_diary():
-	diary_submit = request.forms.get('mydiary')
+# @app.route('/', method='POST')
+# def save_diary():
+	# diary_submit = request.forms.get('mydiary')
 	# file = open("DiaryPool.txt","a")
 	# file.write(str(diary_submit)+"\n")
 	# file.close()
 
 
-	bucket = Bucket("diarypool")
-	history = bucket.get_object_contents("DiaryPool.txt")
-	history_line = history.split("\n")
 	
 
 	# file = open("DiaryPool.txt")
 	# history = file.readlines()
 	# file.close()
 	
-	return template("show_history.tpl", history=history_line)
+	# return template("show_history.tpl", history=history)
 
 application = sae.create_wsgi_app(app)
