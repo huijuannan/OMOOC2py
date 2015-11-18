@@ -43,3 +43,42 @@ version: 1
   - 应该是需要用数据库的时候了kvdb
   - 那么，用txt这种做法就是不可能实现的吗？
 
+### 利用Storage存储过往日记
+- 的确，正如之前的猜想那样，直接从本地同步上去的放置代码的文件夹里的内容是不能在浏览器上进行修改的
+- 而需要用到Storage，也就相当于我们的硬盘空间，不过是放在SAE上的
+- 首先，可以在SAE的控制台Storage的[界面](sae.sina.com.cn)创建一个domain。domian就是下面说到的bucket，是同一个东西。
+- 我直接从网页上在这个domian里上传了DiaryPool.txt
+- 把原来代码的`file = open("DiaryPool.txt","a")`换成了
+```python
+bucket = Bucket("diarypool")
+history = bucket.get_object_contents("DiaryPool.txt")
+```
+- 打开xieriji.sinaapp.com发现日记可以正常显示，说明storage的确是可以存储并直接用Bucket读取的
+- 那么就开始将一行日记记录到DiaryPool.txt里面。首先，发现了`put_object()`这个命令
+- 于是，把读进来的一行日记直接用这个命令存起来`bucket.put_object("DiaryPool.txt", 'new diary')`
+- 进入网页，发现它把之前的都抹掉了，只剩下一行新的。原来put_object是全部更新的意思
+- 再次改进，改为先把之前的内容都读进来，变成一个str，然后`str + 'new diary'`,在一起全部存入DiaryPool.txt里面，于是问题解决
+
+### kvdb
+
+### 清空历史日记
+- 首先在template里面加如一个form
+```html
+<form action="/" method="post">
+<button type="submit" name="delete_all" class="btn btn-default">清空日记本</button>
+</form>
+```
+- 之后在index.wsgi里面加入一个if语句`if request.forms.get('delete_all') == '':`
+- 如果成立，那么把日记本的内容清空
+```python
+bucket = Bucket("diarypool")
+bucket.put_object("DiaryPool.txt", '')
+return template("welcome.tpl")
+```
+- 任何一个操作的行为背后都有一个表单的提交（？），即Client和Server的互动是通过表单（？）
+
+
+
+## References
+- http://sae-python.readthedocs.org/en/latest/service.html#storage
+

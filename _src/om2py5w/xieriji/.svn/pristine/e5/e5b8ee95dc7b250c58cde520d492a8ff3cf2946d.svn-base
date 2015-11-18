@@ -14,13 +14,13 @@ def  submit_diary():
 
 
 @app.route('/', method='POST')
-def save_diary():	
-	if request.forms.get('delete_all') == '':
+def save_diary():
+	if request.GET.get('delete_all','').strip():
 		bucket = Bucket("diarypool")
 		bucket.put_object("DiaryPool.txt", '')
 		return template("welcome.tpl")
-
 	else:
+
 		bucket = Bucket("diarypool")
 		history = bucket.get_object_contents("DiaryPool.txt")
 
@@ -32,13 +32,5 @@ def save_diary():
 		history_line = history.split("\n")
 		
 		return template("show_history.tpl", history=history_line)
-
-
-# @app.route('/', method='GET')
-# def clear_diary():
-# 	if request.GET.get('delete_all','').strip():
-# 		bucket = Bucket("diarypool")
-# 		bucket.put_object("DiaryPool.txt", '')
-# 	return template("welcome.tpl")
 
 application = sae.create_wsgi_app(app)

@@ -33,10 +33,10 @@
 
 </div>
 
-</form>
-
-<form action="/" method="post">
+</form action="/" method="GET">
 <button type="submit" name="delete_all" class="btn btn-default">清空日记本</button>
+
+<form>
 	
 </form>
 </div>

@@ -32,12 +32,6 @@
 	</span>
 
 </div>
-
-</form>
-
-<form action="/" method="post">
-<button type="submit" name="delete_all" class="btn btn-default">清空日记本</button>
-	
 </form>
 </div>
 </div>
